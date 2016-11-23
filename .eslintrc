@@ -339,7 +339,7 @@
     // limits the number of parameters that can be used in the function declaration. (off by default)
     "max-statements": 0,
     "max-lines": ["error", {
-      "max": 200,
+      "max": 100,
       "skipBlankLines": false,
       "skipComments": false
     }],
