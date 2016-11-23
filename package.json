@@ -1,0 +1,24 @@
+{
+  "name": "React-native-flip-card",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "version": "0.0.1",
+  "description": "An animated flip card component for React Native",
+  "main": "index.js",
+  "author": "Yasemin Cidem <yasemincidem@gmail.com>",
+  "keywords": [
+    "react",
+    "native",
+    "react-native",
+    "flip",
+    "card",
+    "animation",
+    "flip-card"
+  ],
+  "devDependencies": {
+    "babel-eslint": "^7.1.0",
+    "eslint": "^3.9.1"
+  }
+}
