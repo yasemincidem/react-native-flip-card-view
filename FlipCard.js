@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Animated, Easing, TouchableOpacity, Text, View} from "react-native";
 
-class AvaFlipCard extends Component {
+class FlipCard extends Component {
     state = {
         animatedValue: new Animated.Value(0),
         isFlipped: true,
@@ -54,4 +54,4 @@ const styles = {
         flex: 1
     }
 }
-export {AvaFlipCard};
+export default FlipCard;
