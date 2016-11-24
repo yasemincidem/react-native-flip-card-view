@@ -4,15 +4,15 @@ This application is flip card view between front and back for react native.
 ## Installation
 
 ```sh
-npm install react-native-flip-card
+npm install --save react-native-flip-card-view
 ```
 
 ## Example
 
 ```js
 import React, {Component} from "react";
-import {View} from "react-native";
-import FlipCard from "ReactNativeFlipCard"
+import {View,Text} from "react-native";
+import FlipCard from "react-native-flip-card-view"
 
 export default class Demo extends Component {
   render = () => {
