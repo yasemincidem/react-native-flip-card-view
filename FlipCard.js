@@ -64,4 +64,4 @@ var FlipCard = React.createClass({
     }
 });
 
-export default FlipCard;
+module.exports = FlipCard;
