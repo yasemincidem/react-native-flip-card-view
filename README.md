@@ -6,6 +6,8 @@ The purpose of application is to flip view between front page and back page for 
 ```sh
 npm install --save react-native-flip-card-view
 ```
+## Demo
+![](demo.gif)
 
 ## Example
 
