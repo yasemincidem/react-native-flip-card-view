@@ -1,21 +1,35 @@
-import React, {Component} from "react";
-import {Animated, Easing, TouchableOpacity, Text, View} from "react-native";
+import React from "react";
+import {
+    Animated,
+    Easing,
+    TouchableOpacity,
+    Text,
+    View
+} from "react-native";
 
-class FlipCard extends Component {
-    state = {
-        animatedValue: new Animated.Value(0),
-        isFlipped: true,
-    };
+const styles = {
+    animatedContainer: {
+        flex: 1
+    }
+};
+
+var FlipCard = React.createClass({
+    getInitialState(){
+        return {
+            animatedValue: new Animated.Value(0),
+            isFlipped: true,
+        }
+    },
 
     componentDidUpdate(prevProp, prevState) {
         if (this.state.isFlipped !== prevState.isFlipped) {
             this._flippedCard();
         }
-    }
+    },
 
     _flipToggleCard() {
         this.setState({isFlipped: !this.state.isFlipped});
-    }
+    },
 
     _flippedCard() {
         Animated.spring(this.state.animatedValue, {
@@ -24,7 +38,7 @@ class FlipCard extends Component {
             tension: this.props.tension, // Slow
             friction: this.props.friction,  // Oscillate a lot
         }).start();
-    }
+    },
 
     render() {
         const rotateX = this.state.animatedValue.interpolate({
@@ -38,7 +52,7 @@ class FlipCard extends Component {
                     {this.flippedCardView(this.state.isFlipped)}
                 </Animated.View>
             </TouchableOpacity>);
-    };
+    },
 
 
     flippedCardView(isFlipped) {
@@ -48,10 +62,6 @@ class FlipCard extends Component {
             return this.props.renderBack;
         }
     }
-}
-const styles = {
-    animatedContainer: {
-        flex: 1
-    }
-}
+});
+
 export default FlipCard;
