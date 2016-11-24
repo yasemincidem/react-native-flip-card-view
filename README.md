@@ -1,14 +1,10 @@
 # react-native-flip-card-view
 This application is flip card view between front and back for react native.
 
-## Demo
-
-
-
 ## Installation
 
 ```sh
-npm install React-native-flip-card
+npm install react-native-flip-card
 ```
 
 ## Example
@@ -22,20 +18,21 @@ export default class Demo extends Component {
   render = () => {
     return (
       <FlipCard style={{flex: 1}}
-                    velocity={2}
-                    tension={5}
-                    friction={1}
-                    renderFront={this._renderFront()}
+                    velocity={2} // Velocity makes it move
+                    tension={5} // Slow
+                    friction={1} // Oscillate a lot
+                    renderFront={this._renderFront()} 
                     renderBack={this._renderBack()}/>
     );
   };
+  //Desired screen view method in front page
   _renderFront() {
         return (
             <View style={{backgroundColor: 'red',flex:1,height:100}}>
                 <Text>Hello front page</Text>
             </View>);
     }
-
+  //Desired screen view method in back page
     _renderBack() {
         return (
             <View style={{backgroundColor: 'blue',flex:1,height:100}}>
@@ -44,17 +41,4 @@ export default class Demo extends Component {
     }
  
 }
-```
-
-.package.json:
-```
-"dependencies": {
-    "react": "15.3.2",
-    "react-native": "0.36.1"
-  },
-  "devDependencies": {
-    "babel-eslint": "^7.1.0",
-    "eslint": "^3.9.1",
-    "eslint-plugin-react": "^6.5.0",
-  }
 ```
