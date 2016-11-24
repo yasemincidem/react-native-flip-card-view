@@ -1,5 +1,5 @@
 # react-native-flip-card-view
-This application is flip card view between front and back for react native.
+The purpose of application is to flip view between front page and back page for react native.
 
 ## Installation
 

@@ -2,7 +2,7 @@
   "name": "react-native-flip-card-view",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/yasemincidem/Flip-Card"
   },
   "version": "0.0.2",
   "description": "An animated flip card component for React Native",
