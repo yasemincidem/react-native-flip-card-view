@@ -1,0 +1,9 @@
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+.gitignore
+.idea/react-native-flip-card-view.iml
+.idea/vcs.xml

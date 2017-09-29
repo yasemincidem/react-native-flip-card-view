@@ -13,23 +13,27 @@ const styles = {
     }
 };
 
-var FlipCard = React.createClass({
-    getInitialState(){
-        return {
+class FlipCard extends Component{
+    constructor(){
+        super();
+        this._flipToggleCard = this._flipToggleCard.bind(this);
+        this._flippedCard = this._flippedCard.bind(this);
+        this.flippedCardView = this.flippedCardView.bind(this);
+        this.state = {
             animatedValue: new Animated.Value(0),
             isFlipped: true,
-        }
-    },
+        };
+    };
 
     componentDidUpdate(prevProp, prevState) {
         if (this.state.isFlipped !== prevState.isFlipped) {
             this._flippedCard();
         }
-    },
+    };
 
     _flipToggleCard() {
         this.setState({isFlipped: !this.state.isFlipped});
-    },
+    };
 
     _flippedCard() {
         Animated.spring(this.state.animatedValue, {
@@ -38,7 +42,7 @@ var FlipCard = React.createClass({
             tension: this.props.tension, // Slow
             friction: this.props.friction,  // Oscillate a lot
         }).start();
-    },
+    };
 
     render() {
         const rotateX = this.state.animatedValue.interpolate({
@@ -52,7 +56,7 @@ var FlipCard = React.createClass({
                     {this.flippedCardView(this.state.isFlipped)}
                 </Animated.View>
             </TouchableOpacity>);
-    },
+    };
 
 
     flippedCardView(isFlipped) {
@@ -62,6 +66,6 @@ var FlipCard = React.createClass({
             return this.props.renderBack;
         }
     }
-});
+}
 
 module.exports = FlipCard;
