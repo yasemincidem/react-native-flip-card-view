@@ -25,7 +25,7 @@ class FlipCard extends Component{
         };
     };
     componentWillReceiveProps(props){
-        this.setState({ isFlipped: props.flipped })
+        this.setState({ isFlipped: props.flipped });
     };
     componentDidUpdate(prevProp, prevState) {
         if (this.state.isFlipped !== prevState.isFlipped) {
@@ -34,7 +34,9 @@ class FlipCard extends Component{
     };
 
     _flipToggleCard() {
+        if (this.props.clickable){
         this.setState({isFlipped: !this.state.isFlipped});
+        }
     };
 
     _flippedCard() {
@@ -52,12 +54,12 @@ class FlipCard extends Component{
             outputRange: ['0deg', '360deg', '0deg']
         });
         return (
-            <TouchableOpacity onPress={this._flipToggleCard} style={styles.animatedContainer}>
+            <View onPress={this._flipToggleCard} style={styles.animatedContainer}>
                 <Animated.View
                     style={[styles.animatedContainer,{transform: [{rotateX}]}]}>
                     {this.flippedCardView(this.state.isFlipped)}
                 </Animated.View>
-            </TouchableOpacity>);
+            </View>);
     };
 
 
