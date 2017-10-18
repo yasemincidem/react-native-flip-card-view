@@ -24,8 +24,8 @@ class FlipCard extends Component{
             isFlipped: true,
         };
     };
-    componentWillReceiveProps(){
-        this.setState({ isFlipped: this.props.flipped })
+    componentWillReceiveProps(props){
+        this.setState({ isFlipped: props.flipped })
     };
     componentDidUpdate(prevProp, prevState) {
         if (this.state.isFlipped !== prevState.isFlipped) {
