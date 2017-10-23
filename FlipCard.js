@@ -49,7 +49,7 @@ class FlipCard extends Component{
     };
     _getOpacity() {
         if (!this.props.activeOpacity) {
-            return 1;
+            return 0.2;
         }
         return this.props.touchOpacity;
     }
