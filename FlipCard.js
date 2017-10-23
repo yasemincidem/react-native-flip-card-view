@@ -86,4 +86,4 @@ class FlipCard extends Component {
     }
 }
 
-export { FlipCard };
+module.exports = FlipCard;
