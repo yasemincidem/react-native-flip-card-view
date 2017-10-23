@@ -47,19 +47,24 @@ class FlipCard extends Component{
             friction: this.props.friction,  // Oscillate a lot
         }).start();
     };
-
+    _getOpacity() {
+        if (!this.props.activeOpacity) {
+            return 1;
+        }
+        return this.props.touchOpacity;
+    }
     render() {
         const rotateX = this.state.animatedValue.interpolate({
             inputRange: [0, 0.5, 1],
             outputRange: ['0deg', '360deg', '0deg']
         });
         return (
-            <View onPress={this._flipToggleCard} style={styles.animatedContainer}>
+            <TouchableOpacity activeOpacity={this._getOpacity} onPress={this._flipToggleCard} style={styles.animatedContainer}>
                 <Animated.View
                     style={[styles.animatedContainer,{transform: [{rotateX}]}]}>
                     {this.flippedCardView(this.state.isFlipped)}
                 </Animated.View>
-            </View>);
+            </TouchableOpacity>);
     };
 
 
